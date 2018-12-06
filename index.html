@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+        <link rel="styleSheet" type="text/css" href="style.css">
+    </head>
+    <body bgcolor='#eee'>
+        
+        <nav>
+          <ul class="menu">
+              <li><a href='index.html'>Home</a></li>
+              <li><a href='#'>Africa</a>
+                  <ul>
+                      <li><a href="saharaDesert.html">Sahara Desert</a></li>
+                      <li><a href="Egypt.html">Egyptian Pyramids</a></li>
+                  </ul>
+              </li>
+              <li><a href='#'>Asia</a>
+                  <ul>
+                      <li><a href="Everest.html">Mount   Everest</a></li>
+                  </ul>
+              </li>
+              <li><a href='#'>America</a>
+                      <ul>
+                      <li><a href="GC.html"> Grand Canyon</a></li>
+                  </ul>
+              </li>
+              <li><a href='#'>Europe</a>
+                  <ul>
+                      <li><a href="st.html">Stone Henge</a></li>
+                  </ul>
+              </li>
+        </ul>
+        </nav>
+        <div class="introduction">
+            <br>
+            <h1>Introduction</h1>
+        <p>This website Discusses the seven wonders of the world.It gives infromation on theire size,location and continent<br>
+            in which they are located.Click on the drop down menu under each continent to get the information.Enjoy!!!
+            </p>
+            <br><br>
+            <p>This website is about the magnificent features of the world.<br>
+            The wonders of the world are the Sahara, Mt Everest,<span>Which is tallest mountain in the world</span>,<br>
+            the grand Canyon, the stone henge,<span>Located in Europe</span>, the Egyptian Pyramids, the great wall of china<br>
+        and the river Nile, which is the longest river in the world</p>
+        <div id="list">
+            <br><br>
+            <h2>list of the wonders of the world</h2>
+            <ul>
+                <li>Sahara</li>
+                <li>GrandCanyon</li>
+                <li>River Nile</li>
+                <li>Stone Henge</li>
+                <li>Egyptian pyramids</li>
+                <li>Mt. Everest</li>
+                <li>Great Wall of China</li>
+            </ul>
+        </div>
+        <div id="features">
+        <h3>Features</h3>
+           <p><strong>The Nile River</strong> is the <em>longest</em> river in the world,measuring over 6,850 kilometerslong
+               (approximately 4,260 miles).</p> 
+        </div>
+        </div>
+        
+        <div id="map"></div>
+        
+        <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var location1 = {lat:23.4162, lng:25.6628 };
+        var location2 = {lat:29.9792, lng:31.1342 };
+        var location3 = {lat:27.9881, lng:86.9250 };
+        var location4 = {lat:36.0544, lng:-112.1401 };
+        var location5 = {lat:51.1789, lng:1.8262 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center:location1,
+          center2:location2,
+          center3:location3,
+          center4:location4,
+          center:location5
+        });
+          
+        
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">sahara Desert</h1>'+
+            '<div id="bodyContent">'+
+            
+            '</div>'+
+            '</div>';
+
+        var infowindow1 = new google.maps.InfoWindow({
+          content:'<h1 id="firstHeading" class="firstHeading">sahara Desert</h1>'
+        });
+        var infowindow2 = new google.maps.InfoWindow({
+          content:'<h1 id="firstHeading" class="firstHeading">Pyramids</h1>'
+        });
+          
+         var infowindow3 = new google.maps.InfoWindow({
+          content:'<h1 id="firstHeading" class="firstHeading">Mt.Everest</h1>'
+        });
+         var infowindow4 = new google.maps.InfoWindow({
+          content:'<h1 id="firstHeading" class="firstHeading">GrandCanyon</h1>'
+        });
+          
+        var marker1 = new google.maps.Marker({
+          position:location1,
+          map: map,
+          title: 'sahara Desert'
+        });
+        
+        var marker2 = new google.maps.Marker({
+          position:location2,
+          map: map,
+          title: 'Egypitian pyramid'
+        });
+          
+        var marker3 = new google.maps.Marker({
+          position:location3,
+          map: map,
+          title: 'Mt.Everest'
+        });
+          
+       var marker4 = new google.maps.Marker({
+          position:location4,
+          map: map,
+          title: 'Grand canyon'
+        });
+          
+       var marker4 = new google.maps.Marker({
+          position:location5,
+          map: map,
+          title: 'stonehenge'
+        });
+          
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+          
+       marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+       marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA23qcXuGK77p1Smzt7qKsJsMF61TMvDaY&callback=initMap">
+    </script>
+    </body>
+</html>
